@@ -20,8 +20,10 @@ function CalcularPrecio ()
  	porcentajeDesc= 0;
 
  	cantidad = document.getElementById('Cantidad').value;
+ 	cantidad = parseInt(cantidad);
  	marca = document.getElementById('Marca').value;
  	precioBruto = cantidad * precioUni;
+
 
  	switch (cantidad)
  	{
@@ -31,12 +33,58 @@ function CalcularPrecio ()
  				break;
  		case 3:
  				// usar switch dentro de switch para Marca
- 				break;
+ 				switch (marca)
+ 						{
+		 						case ("ArgentinaLuz"):
+		 						porcentajeDesc = 15;
+		 						break;
+		 						case ("FelipeLamparas"):
+		 						porcentajeDesc = 10;
+		 						break;
+		 						default : 
+		 						porcentajeDesc = 5;
+		 						break;
+ 						}
+ 					break;
+
+ 		case 4: 
+ 				switch (marca)
+ 						{
+		 				case ("ArgentinaLuz"):
+		 					porcentajeDesc = 25;
+		 					break;
+		 				case ("FelipeLamparas"):
+		 					porcentajeDesc = 25;
+		 					break;
+		 				default:
+		 					porcentajeDesc = 20;
+		 					break;
+		 				}
+		 		break;
+		 case 5: 
+		 		switch (marca)
+		 				{
+			 				case ("ArgentinaLuz"):
+			 				porcentajeDesc = 40;
+			 				break;
+			 				default : 
+			 				porcentajeDesc = 30;
+			 				break;
+			 			}
+		 		break;
+		 case 6 : 
+		 			porcentajeDesc = 50;
+		 			break;
+		 default:
+		 			porcentajeDesc = 0;
+		 			break;
+
+
  	}
 
 
 
-
+/*
 
  	if (cantidad >5)
  	{
@@ -92,9 +140,9 @@ function CalcularPrecio ()
  			}
  	}
 
- 	precioFinal = precioBruto - (precioBruto * porcentajeDesc);
-
- 	if (precioFinal > 120)
+*/
+ 	precioFinal = precioBruto + (precioBruto * porcentajeDesc);
+ 	/*if (precioFinal > 120)
  	{
 
  		iibb = precioFinal * 0.1;
@@ -102,6 +150,7 @@ function CalcularPrecio ()
 
  		precioFinal = precioFinal - precioFinal * 0.1;
  	}
+ 	*/
 
- 	document.getElementById('precioDescento').value = precioFinal;
+ 	document.getElementById('precioDescuento').value = precioFinal;
 }
