@@ -16,8 +16,17 @@ alert ("Por favor ingrese numeros hasta que la respuesta sea diferente a si");
 				numeroActual = prompt ("por favor ingrese un numero");
 				numeroActual = parseInt(numeroActual);
 				
+				 if (numeroActual>0)
+					{
+						positivo = numeroActual + positivo;
+					}
+					
+				if (numeroActual<0)
+					{
+						negativo = negativo * numeroActual;;
+					}
 
-				positivo = numeroActual + acumulador;
+				
 				respuesta = prompt ("Quiere continuar agregando numeros?");
 			}
 
